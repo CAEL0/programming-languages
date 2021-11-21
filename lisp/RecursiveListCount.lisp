@@ -1,0 +1,12 @@
+(defun RecursiveListCount (arr x)
+    (cond
+        ((null arr) 0)
+        ((atom (car arr))
+            (if (eq x (car arr))
+                (+ 1 (RecursiveListCount (cdr arr) x))
+                (RecursiveListCount (cdr arr) x)
+            )
+        )
+        (t (+ (RecursiveListCount (car arr) x) (RecursiveListCount (cdr arr) x)))
+    )
+)
